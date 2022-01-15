@@ -13,6 +13,7 @@ import {
 
 import leftArrow from '../../../images/left-arrow.svg';
 import styles from './ProductList.module.scss';
+import DetailedDisplay from './DetailedDisplay';
 
 const ProductList = () => {
 
@@ -31,27 +32,35 @@ const ProductList = () => {
             image,
         } = product;
 
+        const selected = chosen === index;
+
         return (
-            <div
-                key={index}
-                className={clsx({
-                    [styles.productElement]: true,
-                    [styles.selected]: index === chosen,
-                })}
-                onClick={() => dispatch(chooseProduct(index))}
-            >
-                <img
-                    src={image}
-                    alt={title}
-                    className={styles.productImage}
-                />
-                <div className={styles.name}>
-                    {title}
+            <div key={index}>
+                <div
+                    className={clsx(
+                        [styles.productBar],
+                        {[styles.selected]: selected},
+                    )}
+                    onClick={() => dispatch(chooseProduct(index))}
+                >
+                    <img
+                        src={image}
+                        alt={title}
+                        className={styles.productImage}
+                    />
+                    <div className={styles.name}>
+                        {title}
+                    </div>
+                    <img
+                        src={leftArrow}
+                        alt='An arrow'
+                        className={styles.arrow}
+                    />
                 </div>
-                <img
-                    src={leftArrow}
-                    alt='An arrow'
-                    className={styles.arrow}
+                <DetailedDisplay
+                    product={product}
+                    type='under'
+                    hidden={!selected}
                 />
             </div>
         )
