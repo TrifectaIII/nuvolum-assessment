@@ -21,10 +21,10 @@ const ProductList = () => {
     const products = useAppSelector(selectProducts);
     const chosen = useAppSelector(selectChosen);
 
-    // create an element for each product
+    // create an react fragment for each product
     const productElements = products.map((product, index) => {
 
-        // deconstruct the product
+        // deconstruct the product object
         const {
             title,
             image,

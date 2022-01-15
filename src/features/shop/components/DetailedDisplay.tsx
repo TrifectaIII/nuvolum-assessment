@@ -1,10 +1,11 @@
 import React from 'react';
+import clsx from 'clsx';
 
 import {
     useAppSelector,
 } from '../../../state/hooks';
 import {
-    selectChosen, 
+    selectChosen,
     selectProducts, 
 } from '../shopSlice';
 
@@ -16,18 +17,37 @@ const DetailedDisplay = () => {
     const products = useAppSelector(selectProducts);
     const chosen = useAppSelector(selectChosen);
 
-    // deconstruct the selected product object
-    const {
-        price,
-        description,
-        rating
-    } = products[chosen];
+    // create a react fragment for each product
+    const detailElements = products.map((product, index) => {
+
+        // deconstruct the product object
+        const {
+            price,
+            description,
+            rating
+        } = product;
+
+        return (
+            <div
+                key={index}
+                className={clsx({
+                    [styles.detailElement]: true,
+                    // hide if not the selected element
+                    [styles.hidden]: index !== chosen,
+                })}
+            >
+                <h3>${price}</h3>
+                <p>{description}</p>
+                <p>{rating.rate}/5 ({rating.count})</p>
+                <button>Add to Cart</button>
+            </div>
+        );
+
+    });
 
     return (
         <div className={styles.root}>
-            <h3>${price}</h3>
-            <p>{description}</p>
-            <p>{rating.rate}/5 ({rating.count})</p>
+            {detailElements}
         </div>
     );
 }
