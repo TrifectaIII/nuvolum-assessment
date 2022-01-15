@@ -1,13 +1,19 @@
+@import '../../../variables.scss';
+
 .root {
-    background-color: grey;
-    border: 1px solid black;
-    border-left: none;
+    width: 60%;
+    color: $selected-color;
+    background-color: $selected-background-color;
 }
 
 .detailElement {
-    
+    padding: 3rem;
 }
 
 .hidden {
     display: none;
+}
+
+.star {
+    height: 1em,
 }

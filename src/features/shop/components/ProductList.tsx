@@ -11,6 +11,7 @@ import {
     chooseProduct,
 } from '../shopSlice';
 
+import leftArrow from '../../../images/left-arrow.svg';
 import styles from './ProductList.module.scss';
 
 const ProductList = () => {
@@ -44,7 +45,14 @@ const ProductList = () => {
                     alt={title}
                     className={styles.productImage}
                 />
-                <h4>{title}</h4>
+                <div className={styles.name}>
+                    {title}
+                </div>
+                <img
+                    src={leftArrow}
+                    alt='An arrow'
+                    className={styles.arrow}
+                />
             </div>
         )
 

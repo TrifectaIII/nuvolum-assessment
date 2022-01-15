@@ -9,6 +9,8 @@ import {
     selectProducts, 
 } from '../shopSlice';
 
+import blackStar from '../../../images/black-star.svg';
+import goldStar from '../../../images/gold-star.svg';
 import styles from './DetailedDisplay.module.scss';
 
 const DetailedDisplay = () => {
@@ -27,6 +29,20 @@ const DetailedDisplay = () => {
             rating
         } = product;
 
+        const rateRounded = Math.round(rating.rate);
+        const stars = [0,0,0,0,0].map((value, index) => {
+
+            const filled = index < rateRounded;
+
+            return <img
+                key={index}
+                className={styles.star}
+                src={filled ? goldStar : blackStar}
+                alt={filled ? 'A gold star' : 'A black star'}
+            />
+
+        });
+
         return (
             <div
                 key={index}
@@ -38,7 +54,7 @@ const DetailedDisplay = () => {
             >
                 <h3>${price}</h3>
                 <p>{description}</p>
-                <p>{rating.rate}/5 ({rating.count})</p>
+                <p>{stars} ({rating.count})</p>
                 <button>Add to Cart</button>
             </div>
         );

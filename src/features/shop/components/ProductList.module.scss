@@ -1,18 +1,39 @@
-.root {
+@import '../../../variables.scss';
 
+.root {
+    width: 40%;
 }
 
 .productElement {
     display: flex;
-    border-right: 1px solid black;
-}
-
-.selected {
-    background-color: grey;
-    border: 1px solid black;
-    border-right: none;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    transition-property: background-color;
+    transition-duration: $transition-duration;
 }
 
 .productImage {
-    width: 50px;
+    max-height: 5rem;
+}
+
+// .name {
+
+// }
+
+.arrow {
+    max-height: 5rem;
+    filter: invert(1);
+}
+
+.selected {
+    color: $selected-color;
+    background-color: $selected-background-color;
+    
+    .arrow {
+        transform: rotate(180deg);
+        filter: invert(0);
+        transition-property: transform filter;
+        transition-duration: $transition-duration;
+    }
 }
