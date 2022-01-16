@@ -6,7 +6,7 @@ import {
     useAppSelector,
 } from '../../../state/hooks';
 import {
-    selectChosen, 
+    selectChosen,
     selectProducts,
     chooseProduct,
 } from '../shopSlice';
@@ -35,7 +35,9 @@ const ProductList = () => {
         const selected = chosen === index;
 
         return (
-            <div key={index}>
+            <div
+                key={index}
+            >
                 <div
                     className={clsx(
                         [styles.productBar],

@@ -17,10 +17,15 @@ const ProductDisplay = () => {
     return (
         <div className={styles.root}>
             <ProductList />
-            <DetailedDisplay
-                product={selectedProduct}
-                type='main'
-            />
+            {
+                selectedProduct
+                    ? <DetailedDisplay
+                        product={selectedProduct}
+                        type='main'
+                    /> 
+                    : <></>
+            }
+            
         </div>
     );
 }

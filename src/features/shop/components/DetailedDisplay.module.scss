@@ -2,9 +2,18 @@
 
 .root {
     width: 50%;
-    padding: 3rem;
+}
+
+.inner {
     color: $selected-color;
     background-color: $selected-background-color;
+    border-radius: 1rem;
+    margin: 1rem;
+    margin-left: 0.5rem;
+    padding: 1rem 3rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
 }
 
 .main {
@@ -12,13 +21,28 @@
 }
 
 .under {
+
     display: none;
+
+    .inner {
+        border-top-left-radius: 0;
+        border-top-right-radius: 0;
+        padding: 1rem 2rem;
+        margin-top: 0;
+        padding-top: 0;
+        border-top: none;
+    }
+    
 }
 
 @media (max-width: $mobile-breakpoint) {
 
     .root {
         width: 100%;
+    }
+
+    .inner {
+        margin-left: 1rem;
     }
 
     .main {
@@ -35,6 +59,41 @@
     display: none;
 }
 
+.rating {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 2rem 0rem;
+
+    a {
+        text-decoration: none;
+    }
+
+    a:hover {
+        text-decoration: underline;
+    }
+
+}
+
 .star {
-    height: 1em,
+    height: 1.5em,
+}
+
+.cartButton {
+    box-sizing: border-box;
+    color: $default-color;
+    background-color: $default-background-color;
+    padding: 0 1rem;
+    border-radius: 5rem;
+    margin: auto;
+    margin-top: 1rem;
+    border: 1px solid $default-background-color;
+}
+
+// clicked button
+.cartButton:active {
+    box-sizing: border-box;
+    color: $selected-color;
+    background-color: $selected-background-color;
+    border: 1px solid $selected-color;
 }

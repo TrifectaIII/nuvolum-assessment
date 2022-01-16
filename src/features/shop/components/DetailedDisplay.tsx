@@ -34,25 +34,40 @@ const DetailedDisplay = (props: {
             className={styles.star}
             src={filled ? goldStar : blackStar}
             alt={filled ? 'A gold star' : 'A black star'}
+            title={`${rating.rate}/5 Rating`}
         />
 
     });
 
-    const typeClass = props.type === 'main' ? styles.main : styles.under;
-
     return (
         <div
             className={clsx(
-                typeClass,
+                props.type === 'main' ? styles.main : styles.under,
                 [styles.root],
                 // hide if not the selected element
                 {[styles.hidden]: props.hidden},
             )}
         >
-            <h3>${price}</h3>
-            <p>{description}</p>
-            <p>{stars} ({rating.count})</p>
-            <button>Add to Cart</button>
+            <div className={styles.inner}>
+                <h3>${price}</h3>
+                <p>{description}</p>
+                <div
+                    className={styles.rating}
+                >
+                    {stars}
+                    (<a
+                        href='/'
+                        title='See reviews'
+                    >
+                        {rating.count}
+                    </a>)
+                </div>
+                <button
+                    className={styles.cartButton}
+                >
+                    <h3>Add to Cart</h3>
+                </button>
+            </div>
         </div>
     );
 }

@@ -11,15 +11,21 @@
     align-items: center;
     transition-property: background-color;
     transition-duration: $transition-duration;
+    border: 1px solid $default-color;
+    border-radius: 1rem;
+    margin: 1rem;
+    margin-right: 0.5rem;
+    margin-bottom: 0;
+    padding: 1rem;
 }
 
 .productImage {
     max-height: 5rem;
 }
 
-// .name {
-
-// }
+.name {
+    padding: 1rem;
+}
 
 .arrow {
     max-height: 5rem;
@@ -29,6 +35,13 @@
 .selected {
     color: $selected-color;
     background-color: $selected-background-color;
+
+    @media (max-width: $mobile-breakpoint) {
+        margin-bottom: 0;
+        border-bottom-left-radius: 0;
+        border-bottom-right-radius: 0;
+        border: none;
+    }
     
     .arrow {
         transform: rotate(180deg);
@@ -42,6 +55,10 @@
 
     .root {
         width: 100%,
+    }
+
+    .productBar {
+        margin-right: 1rem;
     }
 
     .arrow {

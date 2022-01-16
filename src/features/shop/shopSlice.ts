@@ -26,9 +26,14 @@ export const shopSlice = createSlice({
     name: 'shop',
     initialState,
     reducers: {
-        // a single main reducer for choosing the current product
+        // reducers for choosing the current product
         chooseProduct: (state, action: PayloadAction<number>) => {
-            state.chosen = action.payload;
+            if (state.chosen === action.payload) {
+                state.chosen = -1;
+            }
+            else {
+                state.chosen = action.payload;
+            }
         }
     },
     // build extrareducers for async thunk
