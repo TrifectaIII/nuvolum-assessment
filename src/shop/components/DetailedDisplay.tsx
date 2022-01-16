@@ -25,9 +25,10 @@ const DetailedDisplay = (props: {
     } = props.product;
 
     // create star rating from SVGs
+    const rateRounded = Math.round(rating.rate);
     const stars = new Array(5).fill(0).map((value, index) => {
 
-        const filled = index < rating.rate;
+        const filled = index < rateRounded;
 
         return <img
             key={index}
