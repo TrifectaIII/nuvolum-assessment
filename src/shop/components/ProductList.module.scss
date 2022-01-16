@@ -1,10 +1,15 @@
-@import '../../variables.scss';
+@import "../../variables.scss";
 
 .root {
     box-sizing: border-box;
     width: 50%;
+
+    @media  screen and (max-width: $tablet-breakpoint) {
+        width: 100%;
+    }        
 }
 
+// the list member which displays the product
 .productBar {
     display: flex;
     flex-direction: row;
@@ -18,56 +23,63 @@
     margin-right: 0.5rem;
     margin-bottom: 0;
     padding: 1rem;
+
+    @media screen and (max-width: $tablet-breakpoint) {
+        margin-right: 1rem;
+    }
+}
+
+// when the product is selected
+.productBar.selected {
+    color: $selected-color;
+    background-color: $selected-background-color;
+
+    // bottom should meld into detailed when on tablet and lower
+    @media screen and (max-width: $tablet-breakpoint) {
+        margin-bottom: 0;
+        border-bottom-left-radius: 0;
+        border-bottom-right-radius: 0;
+        border-bottom: none;
+    }
 }
 
 .productImage {
-    max-height: 5rem;
+    max-height: $default-image-height;
     border-radius: 1rem;
+
+    @media screen and (max-width: $mobile-breakpoint) {
+        max-height: $mobile-image-height;
+    }
 }
 
 .name {
     padding: 1rem;
 }
 
+// menu arrow
 .arrow {
-    max-height: 5rem;
+
+    max-height: $default-image-height;
     filter: invert(1);
     transition-property: transform, filter;
     transition-duration: $transition-duration;
-}
 
-.selected {
-    color: $selected-color;
-    background-color: $selected-background-color;
-
-    @media (max-width: $mobile-breakpoint) {
-        margin-bottom: 0;
-        border-bottom-left-radius: 0;
-        border-bottom-right-radius: 0;
-    }
-    
-    .arrow {
-        transform: scale(-1, 1);
-        filter: invert(0);
-    }
-}
-
-@media (max-width: $mobile-breakpoint) {
-
-    .root {
-        width: 100%,
-    }
-
-    .productBar {
-        margin-right: 1rem;
-    }
-
-    .arrow {
+    @media screen and (max-width: $tablet-breakpoint) {
         transform: rotate(270deg);
     }
 
-    .selected .arrow {
+    @media screen and (max-width: $mobile-breakpoint) {
+        max-height: $mobile-image-height;
+    }
+}
+
+// when the arrow is on a selected bar
+.selected .arrow {
+
+    transform: scale(-1, 1);
+    filter: invert(0);
+
+    @media screen and (max-width: $tablet-breakpoint) {
         transform: rotate(270deg) scale(-1, 1);
     }
-
 }

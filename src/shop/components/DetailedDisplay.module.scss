@@ -3,6 +3,10 @@
 .root {
     box-sizing: border-box;
     width: 50%;
+
+    @media screen and (max-width: $tablet-breakpoint) {
+        width: 100%;
+    }
 }
 
 .inner {
@@ -18,15 +22,25 @@
     justify-content: space-between;
     transition-property: background-color, color;
     transition-duration: $transition-duration;
+    // height is 100% of parent minus the total vertical margin of this element
     min-height: calc(100% - 1rem);
+
+    @media screen and (max-width: $tablet-breakpoint) {
+        margin-left: 1rem;
+    }
 }
 
+// details are displayed in their own section in desktop
 .main {
 
     display: initial;
 
+    @media screen and (max-width: $tablet-breakpoint) {
+        display: none;
+    }
 }
 
+// details are displayed under the bars on tablet and lower
 .under {
 
     display: none;
@@ -39,27 +53,10 @@
         padding-top: 0;
         border-top: none;
     }
-    
-}
 
-@media (max-width: $mobile-breakpoint) {
-
-    .root {
-        width: 100%;
-    }
-
-    .inner {
-        margin-left: 1rem;
-    }
-
-    .main {
-        display: none;
-    }
-
-    .under {
+    @media screen and (max-width: $tablet-breakpoint) {
         display: block;
     }
-
 }
 
 .hidden {
@@ -73,41 +70,44 @@
     }
 }
 
+// stars and reviews
 .rating {
     display: flex;
     justify-content: center;
     align-items: center;
     padding: 2rem 0rem;
 
+    // star icons
+    .star {
+        height: 1.5rem,
+    }
+
+    // review link
     a {
         text-decoration: none;
-    }
 
-    a:hover {
-        text-decoration: underline;
+        &:hover {
+            text-decoration: underline;
+        }
     }
-
 }
 
-.star {
-    height: 1.5em,
-}
-
+// button to add to card
 .cartButton {
     box-sizing: border-box;
     color: $default-color;
     background-color: $default-background-color;
-    padding: 0 1rem;
+    padding: 0rem 2rem;
     border-radius: 5rem;
     margin: auto;
     margin-top: 1rem;
     border: 1px solid $default-background-color;
-}
 
-// clicked button
-.cartButton:active {
-    box-sizing: border-box;
-    color: $selected-color;
-    background-color: $selected-background-color;
-    border: 1px solid $selected-color;
+    // when clicked
+    &:active {
+        box-sizing: border-box;
+        color: $selected-color;
+        background-color: $selected-background-color;
+        border: 1px solid $selected-color;
+    }
 }
