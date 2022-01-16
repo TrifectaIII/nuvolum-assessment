@@ -48,8 +48,10 @@ const DetailedDisplay = (props: {
                 {[styles.hidden]: props.hidden},
             )}
         >
-            <div className={styles.inner}>
-                <h3>${price}</h3>
+            <div
+                className={styles.inner}   
+            >
+                <h3><code>${price}</code></h3>
                 <p>{description}</p>
                 <div
                     className={styles.rating}

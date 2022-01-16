@@ -1,10 +1,15 @@
 @import '../../../variables.scss';
 
 .root {
+    box-sizing: border-box;
     width: 50%;
+    // border: 1rem solid red;
+    // border-radius: 1rem;
+    // border-left-width: 0.5rem;
 }
 
 .inner {
+    box-sizing: border-box;
     color: $selected-color;
     background-color: $selected-background-color;
     border-radius: 1rem;
@@ -14,10 +19,15 @@
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+    transition-property: background-color, color;
+    transition-duration: $transition-duration;
+    min-height: calc(100% - 1rem);
 }
 
 .main {
+
     display: initial;
+
 }
 
 .under {
@@ -56,7 +66,14 @@
 }
 
 .hidden {
-    display: none;
+    // display: none;
+    visibility: hidden;
+    height: 0;
+
+    .inner {
+        color: $default-color;
+        background-color: $default-background-color;
+    }
 }
 
 .rating {
