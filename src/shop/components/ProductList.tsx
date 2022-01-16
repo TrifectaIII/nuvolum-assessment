@@ -1,4 +1,6 @@
 import React from 'react';
+
+// clsx is a simple utility to combine classNames
 import clsx from 'clsx';
 
 import DetailedDisplay from './DetailedDisplay';
