@@ -1,5 +1,5 @@
 import React from 'react';
-import Shop from './features/shop/Shop';
+import Shop from './shop/Shop';
 import styles from './App.module.scss';
 import 'normalize.css';
 

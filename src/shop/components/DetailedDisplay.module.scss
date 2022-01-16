@@ -1,11 +1,8 @@
-@import '../../../variables.scss';
+@import '../../variables.scss';
 
 .root {
     box-sizing: border-box;
     width: 50%;
-    // border: 1rem solid red;
-    // border-radius: 1rem;
-    // border-left-width: 0.5rem;
 }
 
 .inner {

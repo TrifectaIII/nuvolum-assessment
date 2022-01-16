@@ -3,16 +3,16 @@ import clsx from 'clsx';
 
 import {
     Product,
-} from '../shopAPI';
+} from '../Shop';
 
-import blackStar from '../../../images/black-star.svg';
-import goldStar from '../../../images/gold-star.svg';
+import blackStar from '../images/black-star.svg';
+import goldStar from '../images/gold-star.svg';
 import styles from './DetailedDisplay.module.scss';
 
-
-// a detailed display of a single product
+// a detailed display of a single products info
 const DetailedDisplay = (props: {
     product: Product,
+    // main is for desktop view, under for mobile
     type: 'main' | 'under',
     hidden?: boolean,
 }) => {
@@ -57,6 +57,7 @@ const DetailedDisplay = (props: {
                     className={styles.rating}
                 >
                     {stars}
+                    {/* this link would do to a reviews page in theory */}
                     (<a
                         href='/'
                         title='See reviews'
