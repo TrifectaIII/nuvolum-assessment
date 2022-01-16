@@ -12,6 +12,7 @@ import ProductDisplay from './components/ProductDisplay';
 
 import styles from './Shop.module.scss';
 
+// displays the shopping interface
 const Shop = () => {
 
     const dispatch = useAppDispatch();
@@ -22,7 +23,7 @@ const Shop = () => {
     // execute request if it hasn't been made yet
     useEffect(() => {
         if (requestStatus === 'idle') dispatch(fetchProductsAsync());
-    });
+    }, []);
 
     const loadingDisplay = <h3>Loading...</h3>;
 

@@ -3,6 +3,8 @@ import Shop from './features/shop/Shop';
 import styles from './App.module.scss';
 import 'normalize.css';
 
+// Main entrypoint
+// just some text and the shop component
 function App() {
     return (
         <div className={styles.app}>
