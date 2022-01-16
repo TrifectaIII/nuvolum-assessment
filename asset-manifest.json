@@ -1,0 +1,16 @@
+{
+  "files": {
+    "main.css": "/nuvolum-assessment/static/css/main.91bbfef4.css",
+    "main.js": "/nuvolum-assessment/static/js/main.d9ec8c78.js",
+    "static/media/black-star.svg": "/nuvolum-assessment/static/media/black-star.217737c603de8ad551a2979a4f744b9f.svg",
+    "static/media/gold-star.svg": "/nuvolum-assessment/static/media/gold-star.fa5ef825407d55e92dd19cf99fcf5b1f.svg",
+    "index.html": "/nuvolum-assessment/index.html",
+    "static/media/left-arrow.svg": "/nuvolum-assessment/static/media/left-arrow.d7ae91e319f53173ff9922cc395e5c02.svg",
+    "main.91bbfef4.css.map": "/nuvolum-assessment/static/css/main.91bbfef4.css.map",
+    "main.d9ec8c78.js.map": "/nuvolum-assessment/static/js/main.d9ec8c78.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.91bbfef4.css",
+    "static/js/main.d9ec8c78.js"
+  ]
+}
