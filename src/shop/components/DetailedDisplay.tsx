@@ -52,7 +52,7 @@ const DetailedDisplay = (props: {
             <div
                 className={styles.inner}   
             >
-                <h3><code>${price}</code></h3>
+                <h3><code>${price.toFixed(2)}</code></h3>
                 <p>{description}</p>
                 <div
                     className={styles.rating}

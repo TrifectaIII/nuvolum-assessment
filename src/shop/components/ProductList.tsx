@@ -14,7 +14,7 @@ const ProductList = (props: {
     products: Product[],
 }) => {
 
-    // create an react fragment for each product
+    // create an bar for each product
     const productElements = props.products.map((product, index) => {
 
         // deconstruct the product object
